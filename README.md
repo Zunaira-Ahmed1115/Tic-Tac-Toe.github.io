@@ -40,76 +40,74 @@
 
 ## 🖼️ System Flow Diagram
 ┌─────────────────────────────┐
-│ 🟢 START GAME │
+│ 🟢 START GAME               │
 └──────────────┬──────────────┘
-│
-▼
+               │
+               ▼
 ┌─────────────────────────────┐
-│ 📋 INITIALIZE BOARD │
-│ (1 2 3 4 5 6 7 8 9) │
+│ 📋 INITIALIZE BOARD         │
+│ (1 2 3 4 5 6 7 8 9)         │
 └──────────────┬──────────────┘
-│
-▼
+               │
+               ▼
 ┌─────────────────────────────┐
-│ 🖥️ DISPLAY BOARD │
+│ 🖥️ DISPLAY BOARD            │
 └──────────────┬──────────────┘
-│
-▼
+               │
+               ▼
 ┌─────────────────────────────┐
-│ 👤 PLAYER X / O TURN │
+│ 👤 PLAYER X / O TURN        │
 └──────────────┬──────────────┘
-│
-▼
+               │
+               ▼
 ┌─────────────────────────────┐
-│ ⌨️ ENTER MOVE (1-9) │
+│ ⌨️ ENTER MOVE (1-9)         │
 └──────────────┬──────────────┘
-│
-▼
+               │
+               ▼
 ┌─────────────────────────────┐
-│ ✅ IS MOVE VALID? │
+│ ✅ IS MOVE VALID?           │
 └──────┬───────────┬──────────┘
-│ │
-YES NO
-│ │
-▼ ▼
-┌───────────────┐ ┌─────────────────┐
-│ 📝 UPDATE │ │ ❌ SHOW ERROR │
-│ BOARD │ │ MESSAGE │
-│ 💾 LOG MOVE │ │ 🔁 REPEAT TURN │
-└───────┬───────┘ └─────────────────┘
-│
-▼
+       │           │
+      YES          NO
+       │           │
+       ▼           ▼
+┌──────────────┐  ┌────────────────┐
+│ 📝 UPDATE    |  │ ❌ SHOW ERROR │
+│ BOARD        │  │ MESSAGE        │
+│ 💾 LOG MOVE │  │ 🔁 REPEAT TURN │
+└───────┬──────┘  └────────────────┘
+        │
+        ▼
 ┌───────────────┐
-│ 🔍 CHECK │
-│ WINNER/DRAW │
+│ 🔍 CHECK     │
+│ WINNER/DRAW   │
 └───────┬───────┘
-│
-▼
+        │
+         ▼
 ┌───────────────┐
 │ 🏁 GAME OVER? │
 └───┬───────┬───┘
-│ │
-YES NO
-│ │
-▼ └──────────┐
-┌───────────────┐ │
-│ 🎉 DISPLAY │ │
-│ WINNER/DRAW │ │
-└───────┬───────┘ │
-│ │
-▼ ▼
+    │       │
+    YES     NO
+            │
+     ▼      └──────────┐
+┌───────────────┐      │
+│ 🎉 DISPLAY    │      │
+│ WINNER/DRAW   │      │
+└───────┬───────┘      │
+        │              │
+        ▼              ▼
 ┌───────────────┐ ┌─────────────┐
-│ 💾 SAVE FINAL │ │ 🔄 NEXT │
-│ GAME TO │ │ TURN │
-│ game_result.txt│ └─────────────┘
+│ 💾 SAVE FINAL│  | 🔄 NEXT    │
+│ GAME          │ │ TURN        │
+│game_result.txt│ └─────────────┘
 └───────┬───────┘
-│
-▼
+        │
+        ▼
 ┌───────────────┐
-│ 🔚 END GAME │
+│ 🔚 END GAME   │
 └───────────────┘
-
-text
 
 ---
 
@@ -231,7 +229,7 @@ void saveGame(char *board, const char *filename, const char *result) {
     fprintf(file, "Result: %s\n", result);
     fclose(file);
 }
-
+---
 ##📖 Code Explanation
 ---
 📚 Header Files
@@ -370,7 +368,7 @@ Player 2, enter your choice: 2
 🛠️ Technologies Used
 <p align="center"> <img src="https://img.shields.io/badge/C-00599C?style=for-the-badge&logo=c&logoColor=white"> <img src="https://img.shields.io/badge/GCC-5C6BC0?style=for-the-badge&logo=gnu&logoColor=white"> <img src="https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visual-studio-code&logoColor=white"> </p>
 ---
-##📚 Concepts Used:
+## 📚 Concepts Used:
 ✅ Arrays - Board representation
 
 ✅ Pointers - Efficient array manipulation
@@ -383,7 +381,7 @@ Player 2, enter your choice: 2
 
 ✅ Functions - Modular code organization
 
-##💻 How to Run
+## 💻 How to Run
 🐧 On Linux/Mac Terminal:
 bash
 # Compile the program
@@ -391,14 +389,14 @@ gcc tictactoe.c -o tictactoe
 
 # Run the executable
 ./tictactoe
-##🪟 On Windows (Command Prompt):
+## 🪟 On Windows (Command Prompt):
 cmd
 # Compile the program
 gcc tictactoe.c -o tictactoe.exe
 
 # Run the executable
 tictactoe.exe
-##📝 Using any C IDE:
+## 📝 Using any C IDE:
 🔵 Code::Blocks
 
 🔴 Dev-C++
@@ -409,7 +407,7 @@ tictactoe.exe
 
 🟠 Eclipse CDT
 
-##📁 Files Generated
+## 📁 Files Generated
 File Name	Description	Mode
 game_log.txt	Logs each move made during the game	Append (a)
 game_result.txt	Saves final board and game result	Write (w)
@@ -420,7 +418,7 @@ Limitation	Description
 🔴 Single session	Only one game per execution
 🔴 Text-based only	No GUI interface
 🔴 Memory-based positions	Players must remember position numbers
-##🚀 Future Enhancements
+## 🚀 Future Enhancements
 Enhancement	Status
 🎮 Play against computer (AI)	⏳ Planned
 💾 Save/Load game feature	⏳ Planned
@@ -430,8 +428,9 @@ Enhancement	Status
 🔁 Replay option after game ends	⏳ Planned
 🐛 Fix non-numeric input handling	⏳ Planned
 📈 Win/loss statistics tracking	⏳ Planned
-📈 Learning Outcomes
-##After completing this project, you will understand:
+
+##📈 Learning Outcomes
+After completing this project, you will understand:
 
 🧩 2D Board Representation using 1D arrays
 
@@ -450,9 +449,9 @@ A two-player interactive Tic Tac Toe game implemented in C with move logging to 
 
 ##⭐ Show Your Support
 <p align="center"> <a href="#"> <img src="https://img.shields.io/badge/Star-⭐-yellow?style=for-the-badge"> </a> <a href="#"> <img src="https://img.shields.io/badge/Fork-⑂-blue?style=for-the-badge"> </a> <a href="#"> <img src="https://img.shields.io/badge/Follow-👥-green?style=for-the-badge"> </a> </p>
-📝 License
+##📝 License
 
-##MIT License
+MIT License
 
 Copyright (c) 2024 Tic Tac Toe Project
 
